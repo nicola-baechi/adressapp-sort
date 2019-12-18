@@ -53,13 +53,6 @@
                         <Label fx:id="birthday" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
-                  <ButtonBar layoutX="54.0" layoutY="250.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
-                    <buttons>
-                      <Button mnemonicParsing="false" text="New..." />
-                        <Button mnemonicParsing="false" text="Edit..." />
-                        <Button mnemonicParsing="false" text="Delete" />
-                    </buttons>
-                  </ButtonBar>
                   <Button layoutX="218.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonNew" text="New" />
                   <Button layoutX="278.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonEdit" text="Edit" />
                   <Button layoutX="335.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonDelete" text="Delete" />

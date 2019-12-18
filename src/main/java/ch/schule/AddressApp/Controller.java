@@ -16,4 +16,12 @@ public class Controller {
     public void handleButtonDelete(Event event){
         System.out.println("Test");
     }
+
+    public void handleButtonNew(Event event){
+        //TODO
+    }
+
+    public void handleButtonEdit(Event event){
+        //TODO
+    }
 }
