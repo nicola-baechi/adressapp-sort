@@ -10,3 +10,4 @@ target/
 
 .idea
 AdressApp.iml
+.DS_Store
