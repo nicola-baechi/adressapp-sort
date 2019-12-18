@@ -1,5 +1,8 @@
 package ch.schule.AddressApp;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+
 
 /**
  * Controller
