@@ -13,6 +13,20 @@ public class Person {
     private String postalcode;
     private String birthday;
 
+
+    public Person(String firstname, String lastname, String street, String city, String postalcode, String birthday) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.street = street;
+        this.city = city;
+        this.postalcode = postalcode;
+        this.birthday = birthday;
+    }
+
+    public Person() {
+        super();
+    }
+
     public String getFirstname() {
         return this.firstname;
     }
