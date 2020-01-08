@@ -1,63 +1,116 @@
 package ch.schule.AddressApp;
 
+import javafx.beans.property.SimpleStringProperty;
 
 /**
  * Person
  */
 public class Person {
 
-    private String firstname;
-    private String lastname;
-    private String street;
-    private String city;
-    private String postalcode;
-    private String birthday;
+    private SimpleStringProperty firstname;
+    private SimpleStringProperty lastname;
+    private SimpleStringProperty street;
+    private SimpleStringProperty city;
+    private SimpleStringProperty postalcode;
+    private SimpleStringProperty birthday;
 
-    public String getFirstname() {
-        return this.firstname;
+
+    public Person(String firstname, String lastname, String street, String city, String postalcode, String birthday) {
+        this.firstname = new SimpleStringProperty(firstname);
+        this.lastname = new SimpleStringProperty(lastname);
+        this.street = new SimpleStringProperty(street);
+        this.city = new SimpleStringProperty(city);
+        this.postalcode = new SimpleStringProperty(postalcode);
+        this.birthday = new SimpleStringProperty(birthday);
     }
 
-    public void setFirstname(String firstname) {
+    public Person(String firstname, String lastname){
+        this.firstname = new SimpleStringProperty(firstname);
+        this.lastname = new SimpleStringProperty(lastname);
+    }
+
+
+    /**
+     * @return SimpleStringProperty return the firstname
+     */
+    public String getFirstname() {
+        return firstname.get();
+    }
+
+    /**
+     * @param firstname the firstname to set
+     */
+    public void setFirstname(SimpleStringProperty firstname) {
         this.firstname = firstname;
     }
 
+    /**
+     * @return SimpleStringProperty return the lastname
+     */
     public String getLastname() {
-        return this.lastname;
+        return lastname.get();
     }
 
-    public void setLastname(String lastname) {
+    /**
+     * @param lastname the lastname to set
+     */
+    public void setLastname(SimpleStringProperty lastname) {
         this.lastname = lastname;
     }
 
+    /**
+     * @return SimpleStringProperty return the street
+     */
     public String getStreet() {
-        return this.street;
+        return street.get();
     }
 
-    public void setStreet(String street) {
+    /**
+     * @param street the street to set
+     */
+    public void setStreet(SimpleStringProperty street) {
         this.street = street;
     }
 
+    /**
+     * @return SimpleStringProperty return the city
+     */
     public String getCity() {
-        return this.city;
+        return city.get();
     }
 
-    public void setCity(String city) {
+    /**
+     * @param city the city to set
+     */
+    public void setCity(SimpleStringProperty city) {
         this.city = city;
     }
 
+    /**
+     * @return SimpleStringProperty return the postalcode
+     */
     public String getPostalcode() {
-        return this.postalcode;
+        return postalcode.get();
     }
 
-    public void setPostalcode(String postalcode) {
+    /**
+     * @param postalcode the postalcode to set
+     */
+    public void setPostalcode(SimpleStringProperty postalcode) {
         this.postalcode = postalcode;
     }
 
+    /**
+     * @return SimpleStringProperty return the birthday
+     */
     public String getBirthday() {
-        return this.birthday;
+        return birthday.get();
     }
 
-    public void setBirthday(String birthday) {
+    /**
+     * @param birthday the birthday to set
+     */
+    public void setBirthday(SimpleStringProperty birthday) {
         this.birthday = birthday;
     }
 
