@@ -12,6 +12,7 @@ public class AdressModel {
     private ArrayList<Person> plist;
     private ObservableList<Person> oblist = FXCollections.observableArrayList();
     private Person temp;
+    private ObservableList<Person> tempOblist = FXCollections.observableArrayList();
 
     private Person dummy1 = new Person("Nicola", "Baechi", "Harossenstrasse 21", "Brütten", "8311", "03.10.02");;
     private Person dummy2 = new Person("Oliver", "Thoma", "Harossenstrasse 21", "Brütten", "8311", "03.10.02");;
@@ -31,6 +32,18 @@ public class AdressModel {
         return plist;
     }
 
+    public void copyList(){
+        for(Person p: oblist){
+            tempOblist.add(p);
+        }
+    }
+
+    public void refill(){
+        for(Person p: tempOblist){
+            oblist.add(p);
+        }
+    }
+
     // Observable List
     public ObservableList<Person> getObList(){  
         return oblist;
@@ -40,6 +53,10 @@ public class AdressModel {
         for(Person p: oblist){
             System.out.println(p.getFirstname() + " " + p.getLastname());
         }
+    }
+
+    public void removeAllOblist(){
+        this.oblist.removeAll(this.oblist);
     }
 
     public void addObList(Person p){
@@ -80,6 +97,35 @@ public class AdressModel {
      */
     public void setTemp(Person temp) {
         this.temp = temp;
+    }
+
+
+    /**
+     * @return ObservableList<Person> return the oblist
+     */
+    public ObservableList<Person> getOblist() {
+        return oblist;
+    }
+
+    /**
+     * @param oblist the oblist to set
+     */
+    public void setOblist(ObservableList<Person> oblist) {
+        this.oblist = oblist;
+    }
+
+    /**
+     * @return ObservableList<Person> return the tempOblist
+     */
+    public ObservableList<Person> getTempOblist() {
+        return tempOblist;
+    }
+
+    /**
+     * @param tempOblist the tempOblist to set
+     */
+    public void setTempOblist(ObservableList<Person> tempOblist) {
+        this.tempOblist = tempOblist;
     }
 
 }

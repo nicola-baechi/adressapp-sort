@@ -94,9 +94,10 @@ public class Controller {
             model.addObList(p);
             model.addPerson(p);
             clearFields();
-            table.getItems().clear();
-            model.printObList();
-            table.setItems(model.getObList());        
+            model.copyList();
+            model.removeAllOblist();
+            model.refill();
+            table.setItems(model.getObList());
         }
     }
 
