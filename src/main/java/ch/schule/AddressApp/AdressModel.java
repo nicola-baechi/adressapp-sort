@@ -13,8 +13,14 @@ public class AdressModel {
     private ObservableList<Person> oblist = FXCollections.observableArrayList();
     private Person temp;
 
+    private Person dummy1 = new Person("Nicola", "Baechi", "Harossenstrasse 21", "Brütten", "8311", "03.10.02");;
+    private Person dummy2 = new Person("Oliver", "Thoma", "Harossenstrasse 21", "Brütten", "8311", "03.10.02");;
+
     public AdressModel(){
         plist = new ArrayList<>();
+        // loading in a dummy person to check 
+        this.oblist.add(dummy1);
+        this.oblist.add(dummy2);
     }
     // ArrayList
     public void addPerson(Person p){
@@ -26,12 +32,7 @@ public class AdressModel {
     }
 
     // Observable List
-    public ObservableList<Person> getObList(){
-        // loading in a dummy person to check 
-        Person p = new Person("Nicola", "Baechi", "Harossenstrasse 21", "Brütten", "8311", "03.10.02");
-        this.oblist.add(p);
-        Person ps = new Person("Oliver", "Thoma", "Harossenstrasse 21", "Brütten", "8311", "03.10.02");
-        this.oblist.add(ps);
+    public ObservableList<Person> getObList(){  
         return oblist;
     }
 

@@ -1,0 +1,3 @@
+.text-field:disabled, .text-field:disabled > * {
+    -fx-opacity: 1.0 ;
+  }
