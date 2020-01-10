@@ -32,7 +32,6 @@ public class Controller {
     private Button ok, okNew;
 
     public void handleButtonDelete(Event event){
-        System.out.println("Test");
     }
 
     public void handleButtonNew(Event event){
@@ -94,6 +93,7 @@ public class Controller {
             model.addObList(p);
             model.addPerson(p);
             clearFields();
+            label.setText("");
             model.copyList();
             model.removeAllOblist();
             model.refill();
