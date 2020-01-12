@@ -29,14 +29,20 @@ public class Controller {
     @FXML 
     private TableColumn<Person, String> lnameColumn = new TableColumn<>();
     @FXML
-    private Button ok, okNew;
+    private Button ok, okNew, cancel;
 
     public void handleButtonDelete(Event event){
+        Person p = table.getSelectionModel().getSelectedItem();
+        model.deletePerson(p);
+        model.removeObList(p);
+        table.setItems(model.getObList());
+        clearFields();
     }
 
     public void handleButtonNew(Event event){
         clearFields();
         okNew.setVisible(true);
+        cancel.setVisible(true);
         if(firstname.isEditable() == false){
             changeEditable();
         }
@@ -52,10 +58,12 @@ public class Controller {
         city.setText(p.getCity());
         postalcode.setText(p.getPostalcode());
         birthday.setText(p.getBirthday());
-        changeEditable();
     }
 
     public void handleButtonEdit(Event event){
+        if(table.getSelectionModel().isEmpty()){
+            label.setText("Sie müssen eine Person aus der Tabelle auswählen um sie zu bearbeiten");
+        }
         Person p = table.getSelectionModel().getSelectedItem();
         model.setTemp(p);
         changeEditable();
@@ -66,7 +74,7 @@ public class Controller {
         postalcode.setText(p.getPostalcode());
         birthday.setText(p.getBirthday());
         ok.setVisible(true);
-
+        cancel.setVisible(true);
     }
 
     public void handleButtonOk(Event event){
@@ -78,7 +86,19 @@ public class Controller {
         model.addPerson(p);
         clearFields();
         ok.setVisible(false);
+        cancel.setVisible(false);
 
+    }
+
+    public void handleButtonCancel(Event event){
+        clearFields();
+        cancel.setVisible(false);
+        if(ok.isVisible()){
+            ok.setVisible(false);
+        }
+        if(okNew.isVisible()){
+            okNew.setVisible(false);
+        }
     }
 
     public void handleButtonOkNew(Event event){
@@ -98,6 +118,8 @@ public class Controller {
             model.removeAllOblist();
             model.refill();
             table.setItems(model.getObList());
+            okNew.setVisible(false);
+            cancel.setVisible(false);
         }
     }
 
@@ -130,10 +152,11 @@ public class Controller {
     }
 
     @FXML
-    private void initialize(){ 
-        firstname.setStyle("-fx-opacity: 1.0;");
+    private void initialize(){
+        changeEditable();
         ok.setVisible(false);
         okNew.setVisible(false);
+        cancel.setVisible(false);
         fnameColumn.setCellValueFactory(new PropertyValueFactory<Person, String>("firstname")); 
         lnameColumn.setCellValueFactory(new PropertyValueFactory<Person, String>("lastname"));
         table.setItems(model.getObList());

@@ -11,8 +11,8 @@ public class AdressModel {
 
     private ArrayList<Person> plist;
     private ObservableList<Person> oblist = FXCollections.observableArrayList();
-    private Person temp;
     private ObservableList<Person> tempOblist = FXCollections.observableArrayList();
+    private Person temp;
 
     private Person dummy1 = new Person("Nicola", "Baechi", "Harossenstrasse 21", "Brütten", "8311", "03.10.02");;
     private Person dummy2 = new Person("Oliver", "Thoma", "Harossenstrasse 21", "Brütten", "8311", "03.10.02");;
@@ -126,6 +126,34 @@ public class AdressModel {
      */
     public void setTempOblist(ObservableList<Person> tempOblist) {
         this.tempOblist = tempOblist;
+    }
+
+    /**
+     * @return Person return the dummy1
+     */
+    public Person getDummy1() {
+        return dummy1;
+    }
+
+    /**
+     * @param dummy1 the dummy1 to set
+     */
+    public void setDummy1(Person dummy1) {
+        this.dummy1 = dummy1;
+    }
+
+    /**
+     * @return Person return the dummy2
+     */
+    public Person getDummy2() {
+        return dummy2;
+    }
+
+    /**
+     * @param dummy2 the dummy2 to set
+     */
+    public void setDummy2(Person dummy2) {
+        this.dummy2 = dummy2;
     }
 
 }
