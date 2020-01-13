@@ -29,7 +29,7 @@ public class Controller {
     @FXML 
     private TableColumn<Person, String> lnameColumn = new TableColumn<>();
     @FXML
-    private Button ok, okNew, cancel;
+    private Button ok, okNew, cancel, sortLname, sortFname;
 
     public void handleButtonDelete(Event event){
         Person p = table.getSelectionModel().getSelectedItem();
@@ -46,7 +46,15 @@ public class Controller {
         if(firstname.isEditable() == false){
             changeEditable();
         }
-    } 
+    }
+    
+    public void handleButtonSortFirstname(Event event){
+        table.getSortOrder().add(fnameColumn);
+    }
+
+    public void handleButtonSortLastname(Event event){
+        table.getSortOrder().add(lnameColumn);
+    }
 
     @FXML
     public void fillPersonData(MouseEvent event){
@@ -100,7 +108,7 @@ public class Controller {
             okNew.setVisible(false);
         }
     }
-
+    // Problem mit add: gelöschte werden wieder aufgeführt
     public void handleButtonOkNew(Event event){
         if(firstname.getText().isEmpty() || lastname.getText().isEmpty() 
         || street.getText().isEmpty() || city.getText().isEmpty() 

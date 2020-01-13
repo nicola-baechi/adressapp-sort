@@ -38,7 +38,7 @@ public class MainApp extends Application {
             rootLayout = (BorderPane) loader.load();
 
             // Show the scene containing the root layout.
-            Scene scene = new Scene(rootLayout,980,812);
+            Scene scene = new Scene(rootLayout,980,835);
             scene.getStylesheets().add(getClass().getResource("stylesheet.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.show();
