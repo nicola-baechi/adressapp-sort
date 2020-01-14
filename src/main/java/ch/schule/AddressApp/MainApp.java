@@ -39,7 +39,7 @@ public class MainApp extends Application {
 
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout,980,835);
-            scene.getStylesheets().add(getClass().getResource("stylesheet.css").toExternalForm());
+            
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {

@@ -38,6 +38,12 @@ public class AdressModel {
         }
     }
 
+    public void clearTempOblist(){
+        for(Person p: tempOblist){
+            tempOblist.remove(p);
+        }
+    }
+
     public void refill(){
         for(Person p: tempOblist){
             oblist.add(p);

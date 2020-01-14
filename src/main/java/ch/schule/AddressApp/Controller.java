@@ -47,6 +47,29 @@ public class Controller {
             changeEditable();
         }
     }
+
+    public void handleButtonOkNew(Event event){
+        if(firstname.getText().isEmpty() || lastname.getText().isEmpty() 
+        || street.getText().isEmpty() || city.getText().isEmpty() 
+        || postalcode.getText().isEmpty() || birthday.getText().isEmpty()){
+            label.setText("Füllen Sie bitte alle Felder aus um den Vorgang abzuschliessen");
+        }
+        else{
+            Person p = new Person(firstname.getText(), lastname.getText(), 
+            street.getText(), city.getText(), postalcode.getText(), birthday.getText());
+            model.addObList(p);
+            model.addPerson(p);
+            clearFields();
+            label.setText("");
+            model.clearTempOblist();
+            model.copyList();
+            model.removeAllOblist();
+            model.refill();
+            table.setItems(model.getObList());
+            okNew.setVisible(false);
+            cancel.setVisible(false);
+        }
+    }
     
     public void handleButtonSortFirstname(Event event){
         table.getSortOrder().add(fnameColumn);
@@ -60,6 +83,7 @@ public class Controller {
     public void fillPersonData(MouseEvent event){
         Person p = table.getSelectionModel().getSelectedItem();
         model.setTemp(p);
+        changeEditable();
         firstname.setText(p.getFirstname());
         lastname.setText(p.getLastname());
         street.setText(p.getStreet());
@@ -106,28 +130,6 @@ public class Controller {
         }
         if(okNew.isVisible()){
             okNew.setVisible(false);
-        }
-    }
-    // Problem mit add: gelöschte werden wieder aufgeführt
-    public void handleButtonOkNew(Event event){
-        if(firstname.getText().isEmpty() || lastname.getText().isEmpty() 
-        || street.getText().isEmpty() || city.getText().isEmpty() 
-        || postalcode.getText().isEmpty() || birthday.getText().isEmpty()){
-            label.setText("Füllen Sie bitte alle Felder aus um den Vorgang abzuschliessen");
-        }
-        else{
-            Person p = new Person(firstname.getText(), lastname.getText(), 
-            street.getText(), city.getText(), postalcode.getText(), birthday.getText());
-            model.addObList(p);
-            model.addPerson(p);
-            clearFields();
-            label.setText("");
-            model.copyList();
-            model.removeAllOblist();
-            model.refill();
-            table.setItems(model.getObList());
-            okNew.setVisible(false);
-            cancel.setVisible(false);
         }
     }
 
