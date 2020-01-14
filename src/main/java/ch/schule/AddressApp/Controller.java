@@ -10,6 +10,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.event.EventHandler;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 /**
  * Controller
  */
@@ -20,7 +22,7 @@ public class Controller {
     @FXML
     private Label label;
     @FXML
-    private TextField firstname, lastname, street, city, postalcode, birthday;
+    private TextField firstname, lastname, street, city, postalcode, birthday, filterField;
     // configuring the table
     @FXML 
     private TableView<Person> table = new TableView<>();
@@ -77,6 +79,30 @@ public class Controller {
 
     public void handleButtonSortLastname(Event event){
         table.getSortOrder().add(lnameColumn);
+    }
+
+    public void onEnter(Event e){
+        FilteredList<Person> filteredData = new FilteredList<>(model.getObList(), p -> true);
+        filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(person -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                
+                if (person.getFirstname().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches first name.
+                } else if (person.getLastname().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }
+                return false; // Does not match.
+
+            });
+        });
+        
+        SortedList<Person> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(table.comparatorProperty());
+        table.setItems(sortedData);
     }
 
     @FXML

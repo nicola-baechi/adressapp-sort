@@ -105,14 +105,6 @@ public class AdressModel {
         this.temp = temp;
     }
 
-
-    /**
-     * @return ObservableList<Person> return the oblist
-     */
-    public ObservableList<Person> getOblist() {
-        return oblist;
-    }
-
     /**
      * @param oblist the oblist to set
      */
