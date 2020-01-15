@@ -31,7 +31,7 @@ public class Controller {
     @FXML 
     private TableColumn<Person, String> lnameColumn = new TableColumn<>();
     @FXML
-    private Button ok, okNew, cancel, sortLname, sortFname;
+    private Button ok, okNew, cancel, sortLname, sortFname, buttondelete, buttonedit, buttonnew;
 
     public void handleButtonDelete(Event event){
         Person p = table.getSelectionModel().getSelectedItem();
@@ -48,6 +48,10 @@ public class Controller {
         if(firstname.isEditable() == false){
             changeEditable();
         }
+        buttondelete.setDisable(true);
+        buttonedit.setDisable(true);
+        buttonnew.setDisable(true);
+
     }
 
     public void handleButtonOkNew(Event event){
@@ -72,6 +76,9 @@ public class Controller {
             }
             okNew.setVisible(false);
             cancel.setVisible(false);
+            buttondelete.setDisable(false);
+            buttonedit.setDisable(false);
+            buttonnew.setDisable(false);
         }
     }
     

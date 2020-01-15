@@ -30,9 +30,9 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="446.0" prefWidth="677.0" SplitPane.resizableWithParent="false">
                <children>
-                  <Button layoutX="53.0" layoutY="519.0" mnemonicParsing="false" onAction="#handleButtonNew" prefHeight="51.0" prefWidth="188.0" text="New" />
-                  <Button layoutX="249.0" layoutY="519.0" mnemonicParsing="false" onAction="#handleButtonEdit" prefHeight="51.0" prefWidth="194.0" text="Edit" />
-                  <Button layoutX="451.0" layoutY="519.0" mnemonicParsing="false" onAction="#handleButtonDelete" prefHeight="51.0" prefWidth="188.0" text="Delete" />
+                  <Button fx:id="buttonnew" layoutX="53.0" layoutY="519.0" mnemonicParsing="false" onAction="#handleButtonNew" prefHeight="51.0" prefWidth="188.0" text="New" />
+                  <Button fx:id="buttonedit" layoutX="249.0" layoutY="519.0" mnemonicParsing="false" onAction="#handleButtonEdit" prefHeight="51.0" prefWidth="194.0" text="Edit" />
+                  <Button fx:id="buttondelete" layoutX="451.0" layoutY="519.0" mnemonicParsing="false" onAction="#handleButtonDelete" prefHeight="51.0" prefWidth="188.0" text="Delete" />
                   <TextField fx:id="firstname" layoutX="285.0" layoutY="48.0" prefHeight="51.0" prefWidth="360.0" stylesheets="@../../java/ch/schule/AddressApp/stylesheet.css" />
                   <TextField fx:id="lastname" layoutX="285.0" layoutY="123.0" prefHeight="51.0" prefWidth="360.0" stylesheets="@../../java/ch/schule/AddressApp/stylesheet.css" />
                   <TextField fx:id="street" layoutX="285.0" layoutY="201.0" prefHeight="51.0" prefWidth="360.0" />
