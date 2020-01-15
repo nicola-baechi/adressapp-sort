@@ -8,6 +8,8 @@
 
 target/
 
+gitScreenshots/
+
 .idea
 AdressApp.iml
 .DS_Store
