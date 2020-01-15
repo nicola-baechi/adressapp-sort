@@ -63,11 +63,13 @@ public class Controller {
             model.addPerson(p);
             clearFields();
             label.setText("");
-            model.clearTempOblist();
-            model.copyList();
-            model.removeAllOblist();
-            model.refill();
-            table.setItems(model.getObList());
+            if(model.getObList().isEmpty()){
+                model.clearTempOblist();
+                model.copyList();
+                model.removeAllOblist();
+                model.refill();
+                table.setItems(model.getObList());
+            }
             okNew.setVisible(false);
             cancel.setVisible(false);
         }
@@ -150,6 +152,7 @@ public class Controller {
 
     public void handleButtonCancel(Event event){
         clearFields();
+        label.setText("");
         cancel.setVisible(false);
         if(ok.isVisible()){
             ok.setVisible(false);
