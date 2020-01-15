@@ -15,13 +15,18 @@ public class AdressModel {
     private Person temp;
 
     private Person dummy1 = new Person("Nicola", "Baechi", "Harossenstrasse 21", "Brütten", "8311", "03.10.02");;
-    private Person dummy2 = new Person("Oliver", "Thoma", "Harossenstrasse 21", "Brütten", "8311", "03.10.02");;
+    private Person dummy2 = new Person("Oliver", "Thoma", "Harossenstrasse 21", "Brütten", "8311", "03.10.02");
+    private Person dummy3 = new Person("Sujenan", "Thirumamany", "Moosbrunnenstrass 84", "Lufingen", "8426", "23.02.2002");
+    private Person dummy4 = new Person("Patrick", "Schwab", "Rosenstrasse 123", "Seuzach", "9654", "03.10.02");
+    ;
 
     public AdressModel(){
         plist = new ArrayList<>();
         // loading in a dummy person to check 
         this.oblist.add(dummy1);
         this.oblist.add(dummy2);
+        this.oblist.add(dummy3);
+        this.oblist.add(dummy4);
     }
     // ArrayList
     public void addPerson(Person p){

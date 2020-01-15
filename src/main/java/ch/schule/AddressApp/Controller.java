@@ -109,15 +109,15 @@ public class Controller {
 
     @FXML
     public void fillPersonData(MouseEvent event){
-        Person p = table.getSelectionModel().getSelectedItem();
-        model.setTemp(p);
-        changeEditable();
-        firstname.setText(p.getFirstname());
-        lastname.setText(p.getLastname());
-        street.setText(p.getStreet());
-        city.setText(p.getCity());
-        postalcode.setText(p.getPostalcode());
-        birthday.setText(p.getBirthday());
+            Person p = table.getSelectionModel().getSelectedItem();
+            model.setTemp(p);
+            changeEditable();
+            firstname.setText(p.getFirstname());
+            lastname.setText(p.getLastname());
+            street.setText(p.getStreet());
+            city.setText(p.getCity());
+            postalcode.setText(p.getPostalcode());
+            birthday.setText(p.getBirthday());
     }
 
     public void handleButtonEdit(Event event){
