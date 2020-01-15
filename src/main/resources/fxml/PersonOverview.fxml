@@ -64,7 +64,10 @@
                         <Font name="System Bold" size="19.0" />
                      </font></Label>
                   <Button fx:id="ok" layoutX="375.0" layoutY="598.0" mnemonicParsing="false" onAction="#handleButtonOk" prefHeight="51.0" prefWidth="264.0" text="Ok" />
-                  <Label fx:id="label" layoutX="169.0" layoutY="698.0" prefHeight="51.0" prefWidth="360.0" wrapText="true" />
+                  <Label fx:id="label" alignment="CENTER" layoutX="20.0" layoutY="696.0" prefHeight="51.0" prefWidth="658.0" textFill="#b93232" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font></Label>
                   <Button fx:id="okNew" layoutX="372.0" layoutY="598.0" mnemonicParsing="false" onAction="#handleButtonOkNew" prefHeight="51.0" prefWidth="271.0" text="Ok" />
                   <Button fx:id="cancel" layoutX="53.0" layoutY="598.0" mnemonicParsing="false" onAction="#handleButtonCancel" prefHeight="51.0" prefWidth="271.0" text="Cancel" />
                </children>

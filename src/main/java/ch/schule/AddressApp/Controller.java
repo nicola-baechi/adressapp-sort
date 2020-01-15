@@ -142,6 +142,9 @@ public class Controller {
         birthday.setText(p.getBirthday());
         ok.setVisible(true);
         cancel.setVisible(true);
+        buttondelete.setDisable(true);
+        buttonedit.setDisable(true);
+        buttonnew.setDisable(true);
     }
 
     public void handleButtonOk(Event event){
@@ -154,6 +157,9 @@ public class Controller {
         clearFields();
         ok.setVisible(false);
         cancel.setVisible(false);
+        buttondelete.setDisable(false);
+        buttonedit.setDisable(false);
+        buttonnew.setDisable(false);
 
     }
 
@@ -167,6 +173,9 @@ public class Controller {
         if(okNew.isVisible()){
             okNew.setVisible(false);
         }
+        buttondelete.setDisable(false);
+        buttonedit.setDisable(false);
+        buttonnew.setDisable(false);
     }
 
     public void clearFields(){
